@@ -19,9 +19,13 @@ public class User extends AuditingTimeEntity {
     @Embedded
     private SocialInfo socialInfo;
 
-    public static User newInstance(String socialId, UserSocialType socialType) {
+    @Column(nullable = false, length = 100)
+    private String email;
+
+    public static User newInstance(String socialId, UserSocialType socialType, String email) {
         return User.builder()
                 .socialInfo(SocialInfo.of(socialId, socialType))
+                .email(email)
                 .build();
     }
 }
