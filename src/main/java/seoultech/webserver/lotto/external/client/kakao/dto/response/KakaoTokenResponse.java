@@ -14,19 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class KakaoProfileResponse {
+public class KakaoTokenResponse {
 
-    private String id;
-    private KakaoAccount kakaoAccount;
-
-    @ToString
-    @Getter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-    public static class KakaoAccount {
-
-        private String email;
-    }
+    private String accessToken;
 }
