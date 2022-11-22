@@ -9,6 +9,6 @@ public class LottoViewController {
   @GetMapping("/test")
   public String test() {
 
-    return "main/main";
+    return "main";
   }
 }
