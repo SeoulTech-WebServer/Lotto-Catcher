@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{common/layout}">
+<body>
+<div layout:fragment="contents">
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>회차</th>
+            <th>당첨번호</th>
+            <th>당첨자수</th>
+            <th>1등 당첨금</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="history : ${histories}">
+            <td th:text="${history.round}">회차</td>
+            <td th:text="${history.winNumber}">당첨번호</td>
+            <td th:text="${history.winCount}">당첨자수</td>
+            <td th:text="${history.winAmount}">1등 당첨금</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
