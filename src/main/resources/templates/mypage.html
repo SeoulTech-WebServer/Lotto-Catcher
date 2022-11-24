@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}">
+<body>
+<div layout:fragment="contents">
+    <div th:text="${mypageInfo.email}"></div>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>회차</th>
+            <th>추첨번호</th>
+            <th>당첨금</th>
+            <th>결과</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${mypageInfo.records}">
+            <td th:text="${record.round}">회차</td>
+            <td th:text="${record.lottoNumber}">추첨번호</td>
+            <td th:text="${record.winAmount}">당첨금</td>
+            <td th:text="${record.result}">결과</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

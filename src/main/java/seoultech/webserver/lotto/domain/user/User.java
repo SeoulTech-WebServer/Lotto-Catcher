@@ -2,8 +2,11 @@ package seoultech.webserver.lotto.domain.user;
 
 import lombok.*;
 import seoultech.webserver.lotto.domain.common.AuditingTimeEntity;
+import seoultech.webserver.lotto.domain.record.LottoRecord;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -21,6 +24,9 @@ public class User extends AuditingTimeEntity {
 
     @Column(nullable = false, length = 100)
     private String email;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private final List<LottoRecord> lottoRecords = new ArrayList<>();
 
     public static User newInstance(String socialId, UserSocialType socialType, String email) {
         return User.builder()
