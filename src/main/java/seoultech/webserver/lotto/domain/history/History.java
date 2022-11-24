@@ -1,12 +1,14 @@
 package seoultech.webserver.lotto.domain.history;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -82,4 +84,28 @@ public class History extends AuditingTimeEntity {
 
     @Column(nullable = false)
     private Integer numberBonus;
+
+    public static History newInstance(Integer round, LocalDate lotteryAt, Integer firstWinnerCount, Integer secondWinnerCount, Integer thirdWinnerCount, Integer fourthWinnerCount, Integer fifthWinnerCount, Long firstWinnerAmount, Long secondWinnerAmount, Long thirdWinnerAmount, Long fourthWinnerAmount, Long fifthWinnerAmount, Integer numberOne, Integer numberTwo, Integer numberThree, Integer numberFour, Integer numberFive, Integer numberSix, Integer numberBonus) {
+        return History.builder()
+                .round(round)
+                .lotteryAt(lotteryAt)
+                .firstWinnerCount(firstWinnerCount)
+                .firstWinnerAmount(firstWinnerAmount)
+                .secondWinnerCount(secondWinnerCount)
+                .secondWinnerAmount(secondWinnerAmount)
+                .thirdWinnerCount(thirdWinnerCount)
+                .thirdWinnerAmount(thirdWinnerAmount)
+                .fourthWinnerCount(fourthWinnerCount)
+                .fourthWinnerAmount(fourthWinnerAmount)
+                .fifthWinnerCount(fifthWinnerCount)
+                .fifthWinnerAmount(fifthWinnerAmount)
+                .numberOne(numberOne)
+                .numberTwo(numberTwo)
+                .numberThree(numberThree)
+                .numberFour(numberFour)
+                .numberFive(numberFive)
+                .numberSix(numberSix)
+                .numberBonus(numberBonus)
+                .build();
+    }
 }
