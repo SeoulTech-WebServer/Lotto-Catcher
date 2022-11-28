@@ -4,21 +4,17 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import seoultech.webserver.lotto.controller.view.dto.LottoViewResponse;
-import seoultech.webserver.lotto.domain.history.History;
-import seoultech.webserver.lotto.service.history.HistoryService;
+import seoultech.webserver.lotto.controller.record.dto.CreateRecordRequest;
 
 @Controller
 @AllArgsConstructor
 public class LottoViewController {
 
-    private final HistoryService historyService;
 
-    @GetMapping("/test")
+    @GetMapping("/lotto")
     public String test(Model model) {
 
-        History history = historyService.findFirst();
-        model.addAttribute("history", LottoViewResponse.of(history));
-        return "main";
+        model.addAttribute("recordRequest", new CreateRecordRequest());
+        return "lotto";
     }
 }

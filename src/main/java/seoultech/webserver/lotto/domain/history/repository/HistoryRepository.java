@@ -7,4 +7,5 @@ import seoultech.webserver.lotto.domain.history.History;
 public interface HistoryRepository extends JpaRepository<History, Long>, HistoryRepositoryCustom {
 
   Optional<History> findFirstByOrderByIdDesc();
+  Optional<History> findByRound(Integer round);
 }
