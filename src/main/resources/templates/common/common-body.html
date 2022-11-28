@@ -2,13 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>
-<div th:fragment="commonBody">
-  <div class="container">
+<div th:fragment="commonBody" style="flex:1">
+  <div class="container container-main">
     <th:block layout:fragment="contents"></th:block>
-  </div>
-  <!-- footer  -->
-  <div class="bg-dark text-white border-bottom min-vh-10" align="center">
-    Copyright 2022. NoNE. All rights reserved.
   </div>
 </div>
 </body>

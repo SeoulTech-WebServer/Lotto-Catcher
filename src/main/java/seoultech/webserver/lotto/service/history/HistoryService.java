@@ -3,6 +3,7 @@ package seoultech.webserver.lotto.service.history;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import seoultech.webserver.lotto.domain.history.History;
 import seoultech.webserver.lotto.domain.history.repository.HistoryRepository;
 import seoultech.webserver.lotto.service.history.dto.response.HistoryResponse;
 
@@ -20,5 +21,10 @@ public class HistoryService {
         return historyRepository.findAllHistoryOrderByRound().stream()
                 .map(HistoryResponse::of)
                 .collect(Collectors.toList());
+    }
+
+    public History findFirst(){
+        return historyRepository.findFirstByOrderByIdDesc()
+            .orElseThrow(IllegalStateException::new);
     }
 }

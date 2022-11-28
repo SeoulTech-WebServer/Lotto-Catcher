@@ -4,7 +4,13 @@
 <head th:replace="common/common-head:: commonHead">
 </head>
 <body>
-<div th:replace="common/common-nav :: commonNav"></div>
-<div th:replace="common/common-body :: commonBody"></div>
+<div style="height: 100vh; display: flex; flex-direction: column">
+  <div th:replace="common/common-nav :: commonNav"></div>
+  <div th:replace="common/common-body :: commonBody"></div>
+  <!-- footer  -->
+  <div class="bg-dark text-white border-bottom min-vh-10 middle-sort" align="center">
+    Copyright 2022. Lotto-Catcher. All rights reserved.
+  </div>
+</div>
 </body>
 </html>
