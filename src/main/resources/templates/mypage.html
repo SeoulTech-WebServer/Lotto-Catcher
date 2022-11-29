@@ -4,8 +4,11 @@
       layout:decorate="~{common/layout}">
 <body>
 <div layout:fragment="contents">
-    <div th:text="${mypageInfo.email}"></div>
-    <table class="table table-dark table-striped">
+    <div>
+        <span th:text="${mypageInfo.email}"></span> 님의 조회 기록
+    </div>
+
+    <table class="table table-dark table-striped" id="history-table">
         <thead>
         <tr>
             <th>회차</th>
