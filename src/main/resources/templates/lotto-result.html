@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{common/layout}">
+<body>
+<div layout:fragment="contents">
+  <p>
+    <span th:text="${result.round}"></span>
+    <span>회차 결과 확인</span>
+  </p>
+  <div style="min-height: 120px;">
+    <div class="card card-body" style="width: 300px;">
+      <span th:text="${result.matchResult}"></span>
+      <span>입니다. </span>
+      <br/>
+      <span th:text="${result.winAmount}"></span>
+      <span> 원 당첨.</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

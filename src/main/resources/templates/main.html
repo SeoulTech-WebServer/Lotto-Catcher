@@ -4,27 +4,39 @@
       layout:decorate="~{common/layout}">
 <body>
 <div layout:fragment="contents">
-  <div>
-    <h3 align="center">980회 당첨번호</h3>
+  <div style="padding-top:20px">
+    <h3 style="font-size: 36px"  align="center">
+      <span th:text="${history.round}"></span> 회차
+    </h3>
   </div>
-  <div>
-    2022-10-2l 번호1123zzzzzxczx
+  <div class="middle-sort">
+    <span th:text="${history.lottoryAt}"></span>
+    <span>추첨</span>
   </div>
   <div class="lotto-numbers">
-    <div class="lotto">1</div>
-    <div class="lotto">2</div>
-    <div class="lotto">3</div>
-    <div class="lotto">4</div>
-    <div class="lotto">5</div>
-    <div class="lotto">6</div>
+    <div class="lotto" th:text="${history.numberOne.number}"
+         th:style="'background-color:' + ${history.numberOne.color} "></div>
+    <div class="lotto" th:text="${history.numberTwo.number}"
+         th:style="'background-color:' + ${history.numberTwo.color} "></div>
+    <div class="lotto" th:text="${history.numberThree.number}"
+         th:style="'background-color:' + ${history.numberThree.color} "></div>
+    <div class="lotto" th:text="${history.numberFour.number}"
+         th:style="'background-color:' + ${history.numberFour.color} "></div>
+    <div class="lotto" th:text="${history.numberFive.number}"
+         th:style="'background-color:' + ${history.numberFive.color} "></div>
+    <div class="lotto" th:text="${history.numberSix.number}"
+         th:style="'background-color:' + ${history.numberSix.color} "></div>
     <div class="plus">+</div>
-    <div class="lotto">8</div>
+    <div class="lotto" th:text="${history.numberBonus.number}"
+         th:style="'background-color:' + ${history.numberBonus.color} "></div>
   </div>
-  <div>
-    <div>1등 당첨 금액</div>
-    <div>34505050505</div>
+  <div style="height: 200px">
+    <div class="middle-sort" style="font-size: 30px">1등 당첨 금액</div>
+    <div class="middle-sort">
+      <span th:text="${history.firstWinnerAmount}"></span>
+      <span> 원</span>
+    </div>
   </div>
-  <button>상세보기</button>
 </div>
 </body>
 </html>

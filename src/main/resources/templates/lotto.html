@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layout}">
+<body>
+
+<div layout:fragment="contents">
+  <div style="padding-top: 50px">
+
+    <form th:action="@{/record}" th:object="${recordRequest}" th:method="post" class="row g-3">
+      <div class="col-md-6">
+        <label for="inputRecord" class="form-label">회차 입력</label>
+        <input type="text" aria-label="round" placeholder="회차입력" class="form-control"
+               th:errorclass="field-error"
+               id="inputRecord"
+               th:field="*{round}">
+        <span class="text-danger" th:errors="*{round}" style="font-size: 12px"></span>
+      </div>
+      <div class="col-md-6">
+        <label for="inputNumberBonus" class="form-label">보너스 번호 입력</label>
+        <input type="text" aria-label="round" placeholder="보너스 번호 입력" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberBonus"
+               th:field="*{numberBonus}">
+        <span class="text-danger" th:errors="*{numberBonus}" style="font-size: 12px"></span>
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberOne" class="form-label">번호1</label>
+        <input type="text" aria-label="numberOne" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberOne"
+               th:field="*{numberOne}">
+        <span class="text-danger" th:errors="*{numberOne}" style="font-size: 12px"></span>
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberTwo" class="form-label">번호2</label>
+        <input type="text" aria-label="numberTwo" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberTwo"
+               th:field="*{numberTwo}">
+        <span class="text-danger" th:errors="*{numberTwo}" style="font-size: 12px"></span>
+
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberThree" class="form-label">번호3</label>
+        <input type="text" aria-label="numberThree" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberThree"
+               th:field="*{numberThree}">
+        <span class="text-danger" th:errors="*{numberThree}" style="font-size: 12px"></span>
+
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberFour" class="form-label">번호4</label>
+        <input type="text" aria-label="numberFour" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberFour"
+               th:field="*{numberFour}">
+        <span class="text-danger" th:errors="*{numberFour}" style="font-size: 12px"></span>
+
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberFive" class="form-label">번호5</label>
+        <input type="text" aria-label="numberFive" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberFive"
+               th:field="*{numberFive}">
+        <span class="text-danger" th:errors="*{numberFive}" style="font-size: 12px"></span>
+
+      </div>
+      <div class="col-md-2">
+        <label for="inputNumberSix" class="form-label">번호6</label>
+        <input type="text" aria-label="numberSix" placeholder="번호" class="form-control"
+               th:errorclass="field-error"
+               id="inputNumberSix"
+               th:field="*{numberSix}">
+        <span class="text-danger" th:errors="*{numberSix}" style="font-size: 12px"></span>
+
+      </div>
+
+      <div class="input-group" style="margin-top: 20px">
+
+        <button type="submit" class="btn btn-success" style="width:200px">제출</button>
+        <button type="button" th:onclick="|location.href='/'|" class="btn btn-secondary"
+                style="width:200px">뒤로가기
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import seoultech.webserver.lotto.domain.common.AuditingTimeEntity;
+import seoultech.webserver.lotto.domain.record.LottoResult;
 
 @Getter
 @Entity
@@ -107,5 +108,24 @@ public class History extends AuditingTimeEntity {
                 .numberSix(numberSix)
                 .numberBonus(numberBonus)
                 .build();
+    }
+
+    public Long getAmount(LottoResult result){
+        if(result.equals(LottoResult.FIRST)){
+            return firstWinnerAmount;
+        }
+        if(result.equals(LottoResult.SECOND)){
+            return secondWinnerAmount;
+        }
+        if(result.equals(LottoResult.THIRD)){
+            return thirdWinnerAmount;
+        }
+        if(result.equals(LottoResult.FOURTH)){
+            return fourthWinnerAmount;
+        }
+        if(result.equals(LottoResult.FIFTH)){
+            return fifthWinnerAmount;
+        }
+        return 0L;
     }
 }
