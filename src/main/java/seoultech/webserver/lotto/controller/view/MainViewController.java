@@ -20,6 +20,9 @@ public class MainViewController {
     @GetMapping
     public String main(Model model, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
+        if (cookies.length == 0) {
+            return "redirect:/login";
+        }
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("userId")) {
                 History history = historyService.findFirst();

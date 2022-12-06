@@ -20,6 +20,9 @@ public class HistoryViewController {
     @GetMapping("/history")
     public String history(Model model, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
+        if (cookies.length == 0) {
+            return "redirect:/login";
+        }
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("userId")) {
                 String userId = cookie.getValue();
