@@ -19,7 +19,7 @@ public class MypageViewController {
     @GetMapping("/mypage")
     public String mypage(Model model, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-        if (cookies.length == 0) {
+        if (cookies == null || cookies.length == 0) {
             return "redirect:/login";
         }
         for (Cookie cookie : cookies) {
